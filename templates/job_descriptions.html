@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Descriptions</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .card-title {
+            color: #1971c2;
+        }
+        .btn-apply {
+            background-color: #1971c2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-apply:hover {
+            background-color: #145a9e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Job Descriptions</h2>
+        <div class="row">
+            {% for job in jobs %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ job[1] }}</h5>
+                        <p class="card-text">{{ job[2] }}</p>
+                        <a href="{{ url_for('job_billboard', job_id=job[0]) }}" class="btn btn-apply">Apply</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

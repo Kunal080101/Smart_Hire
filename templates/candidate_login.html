@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='Assets/Logo-wo Name.svg') }}" type="image/gif" sizes="16x16">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1971c2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #145a9e;
+        }
+        .form-group .register-link {
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            color: #1971c2;
+        }
+        .form-group .register-link:hover {
+            text-decoration: underline;
+        }
+        .alert {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        #footer {
+            background-color: #62bce5;
+            padding: 20px 0;
+        }
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .footer-section {
+            margin: 10px;
+        }
+        .footer-section span {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        .footer-section a {
+            margin: 0 10px;
+        }
+        .footer-section a img {
+            width: 30px;
+            height: 30px;
+        }
+        .footer-credit {
+            background-color: #1971c2;
+            padding: 15px 0;
+            color: white;
+            font-size: 25px;
+            font-weight: 300;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Candidate Login</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="alert">
+              {% for category, message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('candidate_login') }}" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+            <a href="{{ url_for('candidate_register') }}" class="register-link">Register as a new candidate</a>
+        </form>
+    </div>
+    <footer id="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <span>Kunal Patel</span>
+                <a href="https://github.com/Kunal080101"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/kunal-patel539/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
+                <a href="mailto:kunalpatel1928@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
+            </div>
+            <div class="footer-section">
+                <span>Sanika Sardesai</span>
+                <a href="https://github.com/sanikasardesai95"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/sanika-sardesai-548b49179/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
+                <a href="mailto:sanika.sardesai95@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
+            </div>
+            <div class="footer-section">
+                <span>Ashwathy Nair</span>
+                <a href="https://github.com/ashunair"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/ashwathy-nair98/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
+                <a href="mailto:ashwathynairofficial@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
+            </div>
+            <div class="footer-section">
+                <span>Faiza Mukhve</span>
+                <a href="https://github.com/faiza293/"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/faiza-mukve/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
+                <a href="mailto:fmukve@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
+            </div>
+            <div class="footer-section">
+                <span>Dhruv Mistry</span>
+                <a href="https://github.com/dhruv1007"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/dhruvdmistry/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
+                <a href="mailto:dhruvdmistry07@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
+            </div>
+        </div>
+        <div class="footer-credit">
+            <span>Made with ❤ by team Blueprint</span>
+        </div>
+    </footer>
+</body>
+</html>
