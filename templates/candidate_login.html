@@ -79,41 +79,6 @@
             text-align: center;
             margin-bottom: 15px;
         }
-        #footer {
-            background-color: #62bce5;
-            padding: 20px 0;
-        }
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .footer-section {
-            margin: 10px;
-        }
-        .footer-section span {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 18px;
-            color: #333;
-        }
-        .footer-section a {
-            margin: 0 10px;
-        }
-        .footer-section a img {
-            width: 30px;
-            height: 30px;
-        }
-        .footer-credit {
-            background-color: #1971c2;
-            padding: 15px 0;
-            color: white;
-            font-size: 25px;
-            font-weight: 300;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -143,42 +108,5 @@
             <a href="{{ url_for('candidate_register') }}" class="register-link">Register as a new candidate</a>
         </form>
     </div>
-    <footer id="footer">
-        <div class="container footer-container">
-            <div class="footer-section">
-                <span>Kunal Patel</span>
-                <a href="https://github.com/Kunal080101"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/kunal-patel539/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
-                <a href="mailto:kunalpatel1928@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
-            </div>
-            <div class="footer-section">
-                <span>Sanika Sardesai</span>
-                <a href="https://github.com/sanikasardesai95"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/sanika-sardesai-548b49179/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
-                <a href="mailto:sanika.sardesai95@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
-            </div>
-            <div class="footer-section">
-                <span>Ashwathy Nair</span>
-                <a href="https://github.com/ashunair"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/ashwathy-nair98/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
-                <a href="mailto:ashwathynairofficial@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
-            </div>
-            <div class="footer-section">
-                <span>Faiza Mukhve</span>
-                <a href="https://github.com/faiza293/"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/faiza-mukve/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
-                <a href="mailto:fmukve@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
-            </div>
-            <div class="footer-section">
-                <span>Dhruv Mistry</span>
-                <a href="https://github.com/dhruv1007"><img src="{{ url_for('static', filename='github.svg') }}" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/dhruvdmistry/"><img src="{{ url_for('static', filename='linkedin.svg') }}" alt="LinkedIn"></a>
-                <a href="mailto:dhruvdmistry07@gmail.com"><img src="{{ url_for('static', filename='email.svg') }}" alt="Email"></a>
-            </div>
-        </div>
-        <div class="footer-credit">
-            <span>Made with ❤ by team Blueprint</span>
-        </div>
-    </footer>
 </body>
 </html>
